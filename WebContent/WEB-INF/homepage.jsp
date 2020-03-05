@@ -6,13 +6,14 @@
 <head>
 <meta charset="utf-8">
 <style type="text/css"><%@ include file="bootstrap.min.css"%></style>
+<link rel="icon" type="image/png" href="http://localhost:8080/TDHibernate/R.PNG" />
 <title>Accueil</title>
 </head>
 <body style="background-image: url(http://localhost:8080/TDHibernate/ray2.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: 100%;">
 <nav class="navbar navbar-dark" style="background-color:black; border-bottom-style: solid; border-color:#d6faff;">
   <a class="navbar-brand" href="/TDHibernate/Accueil">
     <img src="http://localhost:8080/TDHibernate/R.PNG" width="40" height="40" alt="">
-    Ross Formations
+     <img src="http://localhost:8080/TDHibernate/RFtype.png" width="150" height="30" margin-top="5px">
   </a>
 </nav>
 <div class="container-fuild">
@@ -28,7 +29,7 @@
 </div>
 </div>
 <div class="col-lg-6" style="background-color: #d6faff; border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; ">
-<h1 style="text-align:center;">Bienvenue sur le site de <br>Ross Formations!</h1>
+<h1 style="text-align:center;">Bienvenue sur le site de <br><img src="http://localhost:8080/TDHibernate/TypeRF.png" width="320" height="50"></h1>
 
 <div id="im1" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">

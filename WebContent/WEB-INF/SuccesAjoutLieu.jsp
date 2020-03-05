@@ -6,13 +6,14 @@
 <head>
 <meta charset="utf-8">
 <style type="text/css"><%@ include file="bootstrap.min.css"%></style>
+<link rel="icon" type="image/png" href="http://localhost:8080/TDHibernate/R.PNG" />
 <title>succes lieu</title>
 </head>
 <body style="background-image: url(http://localhost:8080/TDHibernate/ray1.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: 100%;">
 <nav class="navbar navbar-dark" style="background-color:black; border-bottom-style: solid; border-color:#d6faff;">
   <a class="navbar-brand" href="/TDHibernate/Accueil">
-    <img src="http://localhost:8080/TDHibernate/R.PNG" width="30" height="30" class="d-inline-block align-top" alt="">
-    Ross Formations
+    <img src="http://localhost:8080/TDHibernate/R.PNG" width="40" height="40" alt="">
+     <img src="http://localhost:8080/TDHibernate/RFtype.png" width="150" height="30" margin-top="5px">
   </a>
 </nav>
 <div class="container-fuild">
