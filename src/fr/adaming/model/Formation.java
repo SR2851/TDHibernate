@@ -1,7 +1,10 @@
 package fr.adaming.model;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 
 @Entity
@@ -10,6 +13,18 @@ public class Formation {
 @GeneratedValue
 private int idFormation;
 private String theme;
+
+@JoinColumn(name="idLieu")
+@ManyToOne
+
+private Lieu lieu;
+
+public Lieu getLieu() {
+	return lieu;
+}
+public void setLieu(Lieu lieu) {
+	this.lieu = lieu;
+}
 public Formation(int idFormation, String theme) {
 	super();
 	this.idFormation = idFormation;

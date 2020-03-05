@@ -6,27 +6,40 @@
 <head>
 <meta charset="utf-8">
 <style type="text/css"><%@ include file="bootstrap.min.css"%></style>
-<title>Accueil</title>
+<title>New Formation</title>
 </head>
 <body style="background-image: url(http://localhost:8080/TDHibernate/ray1.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: 100%;">
 <nav class="navbar navbar-dark" style="background-color:black; border-bottom-style: solid; border-color:#d6faff;">
-  <a class="navbar-brand" href="">
+  <a class="navbar-brand" href="/TDHibernate/Accueil">
     <img src="http://localhost:8080/TDHibernate/R.PNG" width="30" height="30" class="d-inline-block align-top" alt="">
     Ross Formations
   </a>
 </nav>
 <div class="container-fuild">
 <div class="row">
-<div class="col-lg-3">
-<a href="/TDHibernate/Accueil" style="color:white;">Accueil </a><br>
-<a href="/TDHibernate/ListeFormation" style="color:white;">Liste des formations </a><br>
-<a href="" style="color:white;"> </a>
+<div class="col-lg-3" style="padding-top:6px;">
+<div style="background-color:#50ecfa; border-radius:50px; text-align:center; color:black; margin-left:14px;"><h4>Menu</h4></div>
+<div style="border-bottom-style:solid;border-bottom-color:#50ecfa;margin-left:14px;">
+<h5><a href="/TDHibernate/Accueil" style="color:white;">Accueil </a></h5>
+<h5><a href="/TDHibernate/addFormation" class="btn btn-link btn-lg disabled" role="button" aria-disabled="true" style="color:white;">Enregistrement formation </a></h5>
+<h5><a href="/TDHibernate/addLieu" style="color:white;">Enregistrement lieu </a></h5>
+<h5><a href="/TDHibernate/ListeFormation" style="color:white;">Liste des formations </a></h5>
+<h5><a href="/TDHibernate/ListeLieu" style="color:white;">Liste des lieux </a></h5>
+<h5><a href="/TDHibernate/listLieuFormation" style="color:white;">Formations par lieux </a></h5>
+</div>
 </div>
 <div class="col-lg-6" style="background-color: #d6faff; border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; ">
 <h1>Formulaire d'ajout de nouvelles formations:</h1>
 <form action="/TDHibernate/addFormation" method="post">
-<label>Thème de la formation:</label>
+<label>Thème:</label>
 <input type="text" name="theme" class="form-control"><br>
+<label>Lieu:</label>
+<select name="idLieu" class="form-control">
+<c:forEach items="${lieu}" var="lieu">
+<option value="${lieu.idLieu}">${lieu.ville}-${lieu.adresse}</option>
+ </c:forEach>
+</select>
+<br>
 <input type="submit" value="Ajouter" class="btn btn-dark">
 </form><br><br>
 

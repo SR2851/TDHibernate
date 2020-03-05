@@ -17,18 +17,17 @@ import DAO.LieuDAO;
 import fr.adaming.model.Formation;
 import fr.adaming.model.Lieu;
 
-
 /**
- * Servlet implementation class addFormation
+ * Servlet implementation class listLieuFormation
  */
-@WebServlet("/addFormation")
-public class addFormation extends HttpServlet {
+@WebServlet("/listLieuFormation")
+public class listLieuFormation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public addFormation() {
+    public listLieuFormation() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -37,34 +36,35 @@ public class addFormation extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	List<Lieu> liste=new ArrayList<Lieu>();
-	ILieuDAO daoL=new LieuDAO();
-	liste=daoL.getLieu();
-	request.setAttribute("lieu", liste);
-		this.getServletContext().getRequestDispatcher("/WEB-INF/Formulaire.jsp").forward(request, response);
+		List<Lieu> listeL= new ArrayList<Lieu>();
+		ILieuDAO daoL=new LieuDAO();
+		listeL=daoL.getLieu();
+		request.setAttribute("lieu", listeL);
+		
+		
+		
+		
+		this.getServletContext().getRequestDispatcher("/WEB-INF/ListeLieuFormation.jsp").forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Lieu lieu=new Lieu();
+		List<Lieu> listeL= new ArrayList<Lieu>();
 		ILieuDAO daoL=new LieuDAO();
+		listeL=daoL.getLieu();
+		request.setAttribute("lieu", listeL);
+		
+		Lieu lieu=new Lieu();
 		lieu.setIdLieu(Integer.parseInt(request.getParameter("idLieu")));
-		
-		Formation formation=new Formation();
-		formation.setTheme(request.getParameter("theme"));
-		formation.setLieu(lieu);
-		
+				
+		List<Formation> liste= new ArrayList<Formation>();
 		IFormationDAO daoF=new FormationDAO();
-		int i=daoF.addFormation(formation);
-		if(i==1) {
-			request.setAttribute("message", "Formation ajoutée avec succès!");
-		}
-		else {
-			request.setAttribute("message", "Formation non ajoutée!");
-		}
+		liste=daoF.getFormation(lieu);
+		request.setAttribute("formation", liste);
 		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/SuccesAjout.jsp").forward(request, response);
+		this.getServletContext().getRequestDispatcher("/WEB-INF/ListeLieuFormation.jsp").forward(request, response);
 	}
+
 }

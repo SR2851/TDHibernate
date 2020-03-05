@@ -6,7 +6,7 @@
 <head>
 <meta charset="utf-8">
 <style type="text/css"><%@ include file="bootstrap.min.css"%></style>
-<title>Liste Formations</title>
+<title>Liste lieux</title>
 </head>
 <body style="background-image: url(http://localhost:8080/TDHibernate/ray1.jpg);background-attachment: fixed;background-repeat: no-repeat;background-size: 100%;">
 <nav class="navbar navbar-dark" style="background-color:black; border-bottom-style: solid; border-color:#d6faff;">
@@ -23,32 +23,31 @@
 <h5><a href="/TDHibernate/Accueil" style="color:white;">Accueil </a></h5>
 <h5><a href="/TDHibernate/addFormation" style="color:white;">Enregistrement formation </a></h5>
 <h5><a href="/TDHibernate/addLieu" style="color:white;">Enregistrement lieu </a></h5>
-<h5><a href="/TDHibernate/ListeFormation" class="btn btn-link btn-lg disabled" role="button" aria-disabled="true" style="color:white;">Liste des formations </a></h5>
-<h5><a href="/TDHibernate/ListeLieu" style="color:white;">Liste des lieux </a></h5>
+<h5><a href="/TDHibernate/ListeFormation" style="color:white;">Liste des formations </a></h5>
+<h5><a href="/TDHibernate/ListeLieu" class="btn btn-link btn-lg disabled" role="button" aria-disabled="true" style="color:white;">Liste des lieux </a></h5>
 <h5><a href="/TDHibernate/listLieuFormation" style="color:white;">Formations par lieux </a></h5>
 </div>
 </div>
 <div class="col-lg-6" style="background-color: #d6faff; border-bottom-right-radius: 25px; border-bottom-left-radius: 25px; ">
-<h1>Liste des formations:</h1>
+<h1>Liste des lieux:</h1>
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">idFormation</th>
-      <th scope="col">Thème formation</th>
-      <th scope="col">Lieu</th>
+      <th scope="col">idLieu</th>
+      <th scope="col">Ville</th>
+      <th scope="col">Adresse et salle</th>
     </tr>
   </thead>
   <tbody>
-  <c:forEach items="${formation}" var="formation">
+  <c:forEach items="${lieu}" var="lieu">
     <tr>
-      <th scope="row">${formation.idFormation}</th>
-      <td>${formation.theme}</td>
-      <td>${formation.lieu.ville}-${formation.lieu.adresse}</td>
+      <th scope="row">${lieu.idLieu}</th>
+      <td>${lieu.ville}</td>
+      <td>${lieu.adresse}</td>
     </tr>
     </c:forEach>
   </tbody>
 </table><br>
-
 
 </div>
 <div class="col-lg-3">
